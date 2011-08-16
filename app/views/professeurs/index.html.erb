@@ -1,0 +1,27 @@
+<h1>Listing professeurs</h1>
+
+<table>
+  <tr>
+    <th>Nom</th>
+    <th>Prenom</th>
+    <th>Email</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @professeurs.each do |professeur| %>
+  <tr>
+    <td><%= professeur.nom %></td>
+    <td><%= professeur.prenom %></td>
+    <td><%= professeur.email %></td>
+    <td><%= link_to 'Show', professeur %></td>
+    <td><%= link_to 'Edit', edit_professeur_path(professeur) %></td>
+    <td><%= link_to 'Destroy', professeur, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Professeur', new_professeur_path %>
